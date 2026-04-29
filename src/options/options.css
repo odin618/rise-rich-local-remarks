@@ -1,0 +1,291 @@
+body {
+  margin: 0;
+  color: #1f2937;
+  background: #f8fafc;
+  font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 980px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+h2 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+}
+
+button,
+.import {
+  border: 0;
+  border-radius: 7px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  padding: 8px 11px;
+}
+
+.language,
+.field {
+  display: grid;
+  gap: 4px;
+  color: #475569;
+  font-size: 12px;
+}
+
+select {
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  padding: 7px 8px;
+  font: inherit;
+}
+
+.import input {
+  display: none;
+}
+
+.settings,
+.data-tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.data-tools {
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  background: #ffffff;
+  margin-top: 12px;
+}
+
+.data-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editor {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+input,
+textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  padding: 9px 10px;
+  font: inherit;
+}
+
+textarea {
+  min-height: 86px;
+  resize: vertical;
+}
+
+.editor textarea,
+.editor button,
+.search {
+  grid-column: 1 / -1;
+}
+
+.search {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.remarks {
+  display: grid;
+  flex: 1;
+  gap: 8px;
+  align-content: start;
+  min-height: 160px;
+  max-height: 42vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.remarks::-webkit-scrollbar {
+  width: 8px;
+}
+
+.remarks::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.remarks::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.remark {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  border: 1px solid color-mix(in srgb, var(--rr-tag-border) 55%, #dbe3ef);
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--rr-tag-bg), #ffffff 42%);
+  padding: 12px;
+}
+
+.remark h2 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.wallet-label {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 3px 9px;
+  border: 1px solid var(--rr-tag-border);
+  border-radius: 999px;
+  background: var(--rr-tag-bg);
+  color: var(--rr-tag-fg);
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wallet-label::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.remark p {
+  margin: 0 0 6px;
+  white-space: pre-wrap;
+}
+
+.meta {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.remark .buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.remark .danger {
+  background: #dc2626;
+}
+
+.tone-0 {
+  --rr-tag-bg: rgba(34, 197, 94, 0.12);
+  --rr-tag-border: rgba(22, 163, 74, 0.32);
+  --rr-tag-fg: #15803d;
+}
+
+.tone-1 {
+  --rr-tag-bg: rgba(59, 130, 246, 0.12);
+  --rr-tag-border: rgba(37, 99, 235, 0.32);
+  --rr-tag-fg: #1d4ed8;
+}
+
+.tone-2 {
+  --rr-tag-bg: rgba(168, 85, 247, 0.12);
+  --rr-tag-border: rgba(147, 51, 234, 0.32);
+  --rr-tag-fg: #7e22ce;
+}
+
+.tone-3 {
+  --rr-tag-bg: rgba(236, 72, 153, 0.12);
+  --rr-tag-border: rgba(219, 39, 119, 0.32);
+  --rr-tag-fg: #be185d;
+}
+
+.tone-4 {
+  --rr-tag-bg: rgba(245, 158, 11, 0.13);
+  --rr-tag-border: rgba(217, 119, 6, 0.34);
+  --rr-tag-fg: #b45309;
+}
+
+.tone-5 {
+  --rr-tag-bg: rgba(20, 184, 166, 0.12);
+  --rr-tag-border: rgba(13, 148, 136, 0.32);
+  --rr-tag-fg: #0f766e;
+}
+
+.tone-6 {
+  --rr-tag-bg: rgba(99, 102, 241, 0.12);
+  --rr-tag-border: rgba(79, 70, 229, 0.32);
+  --rr-tag-fg: #4338ca;
+}
+
+.tone-7 {
+  --rr-tag-bg: rgba(239, 68, 68, 0.12);
+  --rr-tag-border: rgba(220, 38, 38, 0.32);
+  --rr-tag-fg: #b91c1c;
+}
+
+@media (max-width: 640px) {
+  header,
+  .editor,
+  .remark {
+    display: block;
+  }
+
+  .actions,
+  .remark .buttons,
+  .data-actions {
+    margin-top: 10px;
+  }
+
+  input,
+  textarea,
+  .editor button,
+  .settings button,
+  .data-actions button,
+  .data-actions .import {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+  }
+
+  .settings,
+  .data-tools,
+  .data-actions {
+    display: block;
+  }
+}

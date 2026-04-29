@@ -1,0 +1,161 @@
+body {
+  width: 280px;
+  margin: 0;
+  color: #172033;
+  background: #f7f9fc;
+  font: 13px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+main {
+  padding: 14px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mark {
+  width: 34px;
+  height: auto;
+  max-height: 38px;
+  border-radius: 6px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 2px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.controls {
+  display: grid;
+  gap: 10px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field {
+  display: grid;
+  gap: 5px;
+  color: #475569;
+}
+
+select {
+  border: 1px solid #d5deeb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172033;
+  padding: 8px 9px;
+  font: inherit;
+}
+
+.gate-card {
+  margin-top: 12px;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 10px;
+}
+
+.gate-card.allowed {
+  border-color: rgba(22, 163, 74, 0.32);
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.1), #ffffff);
+}
+
+.gate-card.locked {
+  border-color: rgba(239, 68, 68, 0.22);
+  background: linear-gradient(180deg, rgba(248, 113, 113, 0.08), #ffffff);
+}
+
+.gate-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px;
+  align-items: center;
+  gap: 8px;
+}
+
+.gate-title {
+  margin: 0;
+  color: #172033;
+  font-weight: 750;
+}
+
+.gate-detail {
+  margin: 5px 36px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.gate-detail a {
+  color: #2563eb;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.gate-detail a:hover {
+  text-decoration: underline;
+}
+
+.icon-button {
+  width: 28px;
+  min-height: 28px;
+  border: 1px solid #d5deeb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #2563eb;
+  cursor: pointer;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.count {
+  margin: 12px 0;
+  color: #64748b;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  padding: 8px 10px;
+  font-weight: 650;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.powered {
+  margin: 12px 0 0;
+  color: #94a3b8;
+  font-size: 11px;
+  text-align: center;
+}
+
+.powered a {
+  color: #2563eb;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.powered a:hover {
+  text-decoration: underline;
+}

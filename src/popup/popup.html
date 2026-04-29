@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rise.Rich Remarks</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <img class="mark" src="../assets/icons/icon-128.png" alt="">
+        <div>
+          <h1 id="title">Rise.Rich Remarks</h1>
+          <p class="subtitle">Local wallet notes</p>
+        </div>
+      </header>
+
+      <section class="controls">
+        <label class="toggle">
+          <input id="enabled" type="checkbox">
+          <span id="enabledLabel">Enable page annotations</span>
+        </label>
+        <label class="field">
+          <span id="languageLabel">Language</span>
+          <select id="language">
+            <option id="languageAuto" value="auto">Auto</option>
+            <option value="zh">&#20013;&#25991;</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+      </section>
+
+      <div id="gateCard" class="gate-card locked">
+        <div class="gate-head">
+          <p id="gateTitle" class="gate-title">Access not verified</p>
+          <button id="retryGate" class="icon-button" type="button" title="Retry">&#8635;</button>
+        </div>
+        <p id="gateDetail" class="gate-detail">Open rise.rich to verify access.</p>
+      </div>
+
+      <p id="count" class="count">0 remarks saved</p>
+      <button id="openOptions" type="button">Manage remarks</button>
+      <p class="powered"><a id="rbotLink" href="https://rise.rich/trade/89ib7vR1bTdKEACWkjuBcMbuGaWpmQcBFB7N3Ddvrise">RBOT</a> &middot; &#32852;&#21512;&#24320;&#21457; <a id="chumoLink" href="https://x.com/chumo_btc">&#21021;&#22696;&#19981;&#22995;&#29066;</a> &amp; <a id="maiziLink" href="https://x.com/rex00618">&#40614;&#23376;</a></p>
+    </main>
+    <script src="../core/adapter.js"></script>
+    <script src="../core/storage.js"></script>
+    <script src="../core/palette.js"></script>
+    <script src="../core/i18n.js"></script>
+    <script src="../core/eligibility.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

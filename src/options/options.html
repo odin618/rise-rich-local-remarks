@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rise.Rich Remarks Manager</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1 id="title">Rise.Rich Remarks</h1>
+        <div class="actions">
+        <label class="language">
+          <span id="languageLabel">Language</span>
+          <select id="language">
+            <option id="languageAuto" value="auto">Auto</option>
+            <option value="zh">&#20013;&#25991;</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+        </div>
+      </header>
+
+      <section class="editor" aria-label="Remark editor">
+        <input id="entityId" placeholder="Wallet address">
+        <textarea id="note" placeholder="Wallet note"></textarea>
+        <input id="tags" placeholder="Tags, separated by commas">
+        <button id="saveRemark" type="button">Save remark</button>
+      </section>
+
+      <input id="search" class="search" placeholder="Search remarks">
+      <section id="remarks" class="remarks" aria-live="polite"></section>
+      <section class="data-tools" aria-label="Data import and export">
+        <div>
+          <h2 id="dataToolsTitle">Data</h2>
+          <p id="dataToolsStatus" class="meta" aria-live="polite"></p>
+        </div>
+        <div class="data-actions">
+          <button id="exportJson" type="button">Export JSON</button>
+          <label class="import">
+            <span id="importJsonLabel">Import JSON</span>
+            <input id="importJson" type="file" accept="application/json">
+          </label>
+        </div>
+      </section>
+      <section class="settings" aria-label="Settings">
+        <label class="field">
+          <span id="customRpcEndpointLabel">Custom RPC</span>
+          <input id="customRpcEndpoint" type="url" placeholder="Leave empty to use default RPC">
+        </label>
+        <button id="saveRpcEndpoint" type="button">Save RPC</button>
+      </section>
+    </main>
+    <script src="../core/adapter.js"></script>
+    <script src="../core/storage.js"></script>
+    <script src="../core/palette.js"></script>
+    <script src="../core/i18n.js"></script>
+    <script src="../core/eligibility.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "rise-rich-local-remarks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local wallet notes browser extension for rise.rich.",
+  "license": "MIT",
+  "scripts": {
+    "package:webstore": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-webstore.ps1",
+    "test": "node tests/run-all.js"
+  }
+}
