@@ -419,13 +419,14 @@
       table.querySelectorAll('tbody tr').forEach((row) => {
         const cells = row.querySelectorAll(adapter.selectors.tradeTraderCell);
         const traderCell = cells[traderIndex];
-        if (!traderCell || traderCell.querySelector('[data-rr-remarks-ui="trade-note"]')) return;
+        if (!traderCell || row.querySelector('[data-rr-remarks-ui="trade-note"]')) return;
 
         const traderButton = traderCell.querySelector('button');
         const addressLabel = extractTraderAddressLabel(traderButton || traderCell);
+        if (!isLikelyTraderAddressLabel(addressLabel)) return;
+
         const annotation = storage.findByAddressLabel(addressLabel);
         if (!hasAnnotationDisplay(annotation)) {
-          if (!addressLabel) return;
           const addButton = makeQuickAddTradeButton(addressLabel, traderButton);
           (traderButton || traderCell).insertAdjacentElement('afterend', addButton);
           return;
@@ -545,6 +546,13 @@
 
   function isLikelySolanaAddress(value) {
     return /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(value);
+  }
+
+  function isLikelyTraderAddressLabel(value) {
+    const text = String(value || '').trim();
+    if (!text || text === '\u6211' || /^me$/i.test(text)) return false;
+    return isLikelySolanaAddress(text)
+      || /^[1-9A-HJ-NP-Za-km-z]{2,}(?:\.{3}|\u2026)[1-9A-HJ-NP-Za-km-z]{2,}$/.test(text);
   }
 
   function makeEditButton(entityId, annotation) {

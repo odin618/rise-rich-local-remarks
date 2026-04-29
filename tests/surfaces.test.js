@@ -103,6 +103,15 @@ test('content script shuts down quietly when Chrome invalidates the extension co
   assert.match(js, /processPage\(\)\.catch/);
 });
 
+test('trade record injection skips own-trader labels and guards the whole row against duplicates', () => {
+  const js = readProjectFile('src', 'content', 'content.js');
+
+  assert.match(js, /row\.querySelector\('\[data-rr-remarks-ui="trade-note"\]'\)/);
+  assert.match(js, /isLikelyTraderAddressLabel\(addressLabel\)/);
+  assert.match(js, /text === '\\u6211'/);
+  assert.match(js, /\(\?:\\\.\{3\}\|\\u2026\)/);
+});
+
 test('remark surfaces preload existing tags and display note-tag labels with the Chinese separator', () => {
   const contentJs = readProjectFile('src', 'content', 'content.js');
   const optionsJs = readProjectFile('src', 'options', 'options.js');
